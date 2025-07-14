@@ -1,0 +1,228 @@
+[
+  {
+    "templateIdea": "Industry-Specific Solution Pages",
+    "templateType": "industry-vertical",
+    "urlPattern": "/solutions/{industry}",
+    "titleTemplate": "{Business} Solutions for {Industry} | {CoreBenefit}",
+    "metaDescriptionTemplate": "Discover how {Business} helps {industry} companies {mainOutcome}. Learn about our specialized features and see customer success stories.",
+    "variables": {
+      "industry": {
+        "type": "string",
+        "description": "Target industry vertical",
+        "dataSource": "industry-list",
+        "examples": ["healthcare", "retail", "manufacturing"]
+      }
+    },
+    "requiredDataPoints": ["industry_pain_points", "industry_specific_features", "case_studies", "roi_metrics"],
+    "contentSections": ["hero", "pain_points", "solution_overview", "features", "case_study", "cta"],
+    "estimatedPages": 50,
+    "priority": "high",
+    "intentType": "solution-aware"
+  },
+  {
+    "templateIdea": "Location-Based Service Pages",
+    "templateType": "geo-targeted",
+    "urlPattern": "/{service}-{city}-{state}",
+    "titleTemplate": "{Service} in {City}, {State} | {Business}",
+    "metaDescriptionTemplate": "Looking for {service} in {City}, {State}? {Business} offers {uniqueValue}. Get started today with {offer}.",
+    "variables": {
+      "city": {
+        "type": "string",
+        "description": "Target city name",
+        "dataSource": "cities-database"
+      },
+      "state": {
+        "type": "string",
+        "description": "Target state/region",
+        "dataSource": "states-database"
+      },
+      "service": {
+        "type": "string",
+        "description": "Core service offering",
+        "dataSource": "services-list"
+      }
+    },
+    "requiredDataPoints": ["local_market_data", "service_areas", "local_testimonials", "location_specific_pricing"],
+    "contentSections": ["local_hero", "service_details", "coverage_area", "local_proof", "contact_form"],
+    "estimatedPages": 500,
+    "priority": "high",
+    "intentType": "transactional"
+  },
+  {
+    "templateIdea": "Use Case/Job-to-be-Done Pages",
+    "templateType": "use-case",
+    "urlPattern": "/use-cases/{use_case_slug}",
+    "titleTemplate": "How to {UseCase} with {Business} | Step-by-Step Guide",
+    "metaDescriptionTemplate": "Learn how to {useCase} efficiently using {Business}. See real examples, best practices, and get started in minutes.",
+    "variables": {
+      "use_case": {
+        "type": "string",
+        "description": "Specific job or task users want to accomplish",
+        "dataSource": "use-cases-database",
+        "examples": ["track employee time", "manage inventory", "automate invoicing"]
+      },
+      "use_case_slug": {
+        "type": "string",
+        "description": "URL-friendly version of use case",
+        "derived_from": "use_case"
+      }
+    },
+    "requiredDataPoints": ["step_by_step_guide", "feature_mapping", "time_savings", "before_after_scenarios"],
+    "contentSections": ["problem_statement", "solution_steps", "features_used", "results", "related_use_cases"],
+    "estimatedPages": 100,
+    "priority": "high",
+    "intentType": "problem-aware"
+  },
+  {
+    "templateIdea": "Comparison Pages",
+    "templateType": "comparison",
+    "urlPattern": "/{business}-vs-{competitor}",
+    "titleTemplate": "{Business} vs {Competitor}: Honest Comparison ({Year})",
+    "metaDescriptionTemplate": "Compare {Business} vs {Competitor}: features, pricing, pros & cons. See why {customerCount} businesses chose {Business}.",
+    "variables": {
+      "competitor": {
+        "type": "string",
+        "description": "Competitor name",
+        "dataSource": "competitors-list"
+      },
+      "year": {
+        "type": "string",
+        "description": "Current year for freshness",
+        "dataSource": "current-year"
+      }
+    },
+    "requiredDataPoints": ["feature_comparison_matrix", "pricing_comparison", "user_reviews", "migration_guide"],
+    "contentSections": ["overview", "feature_table", "pricing_table", "pros_cons", "user_reviews", "migration_cta"],
+    "estimatedPages": 30,
+    "priority": "medium",
+    "intentType": "evaluation"
+  },
+  {
+    "templateIdea": "Integration Pages",
+    "templateType": "integration",
+    "urlPattern": "/integrations/{tool}",
+    "titleTemplate": "{Business} {Tool} Integration | Connect in Minutes",
+    "metaDescriptionTemplate": "Integrate {Business} with {Tool} seamlessly. Sync data, automate workflows, and see setup instructions.",
+    "variables": {
+      "tool": {
+        "type": "string",
+        "description": "Third-party tool or platform",
+        "dataSource": "integrations-list",
+        "examples": ["slack", "salesforce", "quickbooks"]
+      }
+    },
+    "requiredDataPoints": ["integration_benefits", "setup_steps", "use_cases", "api_details", "support_docs"],
+    "contentSections": ["integration_hero", "key_benefits", "how_it_works", "setup_guide", "common_workflows"],
+    "estimatedPages": 75,
+    "priority": "medium",
+    "intentType": "solution-aware"
+  },
+  {
+    "templateIdea": "Pricing Calculator Pages",
+    "templateType": "calculator",
+    "urlPattern": "/pricing-calculator/{segment}",
+    "titleTemplate": "{Business} Pricing Calculator for {Segment} | Get Instant Quote",
+    "metaDescriptionTemplate": "Calculate your {Business} pricing for {segment}. See exact costs based on your needs. No hidden fees.",
+    "variables": {
+      "segment": {
+        "type": "string",
+        "description": "Business segment or size",
+        "dataSource": "segments-list",
+        "examples": ["startups", "small-business", "enterprise"]
+      }
+    },
+    "requiredDataPoints": ["pricing_tiers", "feature_matrix", "usage_limits", "roi_calculator"],
+    "contentSections": ["calculator_widget", "pricing_breakdown", "included_features", "roi_section", "faq"],
+    "estimatedPages": 10,
+    "priority": "high",
+    "intentType": "transactional"
+  },
+  {
+    "templateIdea": "Template/Resource Pages",
+    "templateType": "resource",
+    "urlPattern": "/templates/{template_type}",
+    "titleTemplate": "Free {TemplateType} Templates | {Business}",
+    "metaDescriptionTemplate": "Download free {templateType} templates. Customizable, professional, and ready to use. Save hours of work.",
+    "variables": {
+      "template_type": {
+        "type": "string",
+        "description": "Type of template or resource",
+        "dataSource": "templates-list",
+        "examples": ["invoice", "project-plan", "marketing-calendar"]
+      }
+    },
+    "requiredDataPoints": ["template_files", "customization_options", "use_instructions", "related_features"],
+    "contentSections": ["template_preview", "download_form", "customization_guide", "use_cases", "upgrade_cta"],
+    "estimatedPages": 50,
+    "priority": "medium",
+    "intentType": "informational"
+  },
+  {
+    "templateIdea": "Industry + Use Case Combination",
+    "templateType": "matrix",
+    "urlPattern": "/{industry}/{use_case}",
+    "titleTemplate": "{UseCase} for {Industry} | {Business} Solutions",
+    "metaDescriptionTemplate": "Specialized {useCase} solutions for {industry} businesses. See how {Business} addresses your specific needs.",
+    "variables": {
+      "industry": {
+        "type": "string",
+        "description": "Target industry",
+        "dataSource": "industry-list"
+      },
+      "use_case": {
+        "type": "string",
+        "description": "Specific use case",
+        "dataSource": "use-cases-database"
+      }
+    },
+    "requiredDataPoints": ["industry_use_case_mapping", "specialized_features", "compliance_info", "case_studies"],
+    "contentSections": ["industry_context", "use_case_details", "specialized_solution", "compliance", "success_stories"],
+    "estimatedPages": 200,
+    "priority": "medium",
+    "intentType": "solution-aware"
+  },
+  {
+    "templateIdea": "FAQ/Problem Pages",
+    "templateType": "problem-solution",
+    "urlPattern": "/how-to/{problem_slug}",
+    "titleTemplate": "How to {Problem} | {Business} Guide",
+    "metaDescriptionTemplate": "Struggling with {problem}? Here's how to solve it using {Business}. Step-by-step solution with examples.",
+    "variables": {
+      "problem": {
+        "type": "string",
+        "description": "Common problem or question",
+        "dataSource": "problems-database"
+      },
+      "problem_slug": {
+        "type": "string",
+        "description": "URL-friendly problem statement",
+        "derived_from": "problem"
+      }
+    },
+    "requiredDataPoints": ["problem_description", "solution_steps", "feature_mapping", "alternatives"],
+    "contentSections": ["problem_overview", "quick_answer", "detailed_solution", "video_tutorial", "related_problems"],
+    "estimatedPages": 150,
+    "priority": "low",
+    "intentType": "informational"
+  },
+  {
+    "templateIdea": "ROI/Benefit Pages by Role",
+    "templateType": "persona-based",
+    "urlPattern": "/for-{role}",
+    "titleTemplate": "{Business} for {Role} | Tailored Solutions",
+    "metaDescriptionTemplate": "See how {Business} helps {role} professionals {keyBenefit}. Features, pricing, and success stories for your role.",
+    "variables": {
+      "role": {
+        "type": "string",
+        "description": "Job role or title",
+        "dataSource": "roles-database",
+        "examples": ["cfo", "marketing-manager", "hr-director"]
+      }
+    },
+    "requiredDataPoints": ["role_pain_points", "relevant_features", "roi_metrics", "peer_testimonials"],
+    "contentSections": ["role_hero", "pain_points", "tailored_features", "roi_calculator", "peer_stories"],
+    "estimatedPages": 40,
+    "priority": "medium",
+    "intentType": "solution-aware"
+  }
+]
